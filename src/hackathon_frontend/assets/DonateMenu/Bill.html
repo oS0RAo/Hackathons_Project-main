@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bill</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #E5E5E5;
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header h1 {
+            color: #1E1E1E;
+            margin-bottom: 10px;
+        }
+        .footer {
+            margin-top: 24px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>GLOWFUND</h1>
+            <p>ขอบคุณที่สมทบทุนให้กับเรา!!!</p>
+        </div>
+
+        <h2>Doggy Pillow</h2>
+
+        <table>
+            <tr>
+                <td>Quantity</td>
+                <td id="quantity">1</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td id="price">0</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="totalAmount">0</td>
+            </tr>
+        </table>
+
+        <a href="../HomePage/HomePage.html">Back to menu</a>
+
+        <div class="footer">
+            <p>ในนาม WISARUT YAMPRAYOON ขอขอบคุณ</p>
+            <span id="detail">Product</span>
+            <span id="price">Price: 0</span>
+            <span id="totalAmount">Total: 0</span>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const lastDonationAmount = parseInt(localStorage.getItem('lastDonationAmount') || '0');
+          const donationAmount = parseFloat(localStorage.getItem('donationAmount')) || 0;
+
+          console.log("Retrieved lastDonationAmount:", lastDonationAmount); // Debugging log
+          document.getElementById('price').innerText = `Price: ${donationAmount}`;
+          document.getElementById('totalAmount').innerText = `Total: ${donationAmount}`;
+          document.getElementById("quantity").innerText = "1";
+          document.getElementById("price").innerText = lastDonationAmount;
+          document.getElementById("totalAmount").innerText = lastDonationAmount;
+      });
+  </script>
+  
+</body>
+</html>
